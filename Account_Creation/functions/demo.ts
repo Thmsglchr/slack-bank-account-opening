@@ -12,7 +12,7 @@ import { callGoogleGeocoding } from "../utils/googleUtils.ts";
 
 export const def = DefineFunction({
   callback_id: "opening-journey-demo",
-  title: "Subscription Journey",
+  title: "Account Opening Journey",
   source_file: "Account_Creation/functions/demo.ts",
   input_parameters: {
     properties: {
@@ -178,8 +178,8 @@ export default SlackFunction(def, async ({ inputs, client }) => {
       const personalInfoView = buildPersonalInfoPageView({
         nationality: existingData.nationality,
         birthCountry: existingData.birthCountry,
-        birthDepartment: existingData.birthDepartment,
-        birthCommune: existingData.birthCommune,
+        birthState: existingData.birthState,
+        birthCity: existingData.birthCity,
       });
       return { response_action: "update", view: personalInfoView };
     } catch (error) {
@@ -204,16 +204,16 @@ export default SlackFunction(def, async ({ inputs, client }) => {
     const existingData = existingQuery.items[0] || {};
     const nationality = view.state.values.nationality.nationality_action.value;
     const birthCountry = view.state.values.birth_country.birth_country_action.value;
-    const birthDepartment = view.state.values.birth_department.birth_department_action.value;
-    const birthCommune = view.state.values.birth_commune.birth_commune_action.value;
+    const birthState = view.state.values.birth_state.birth_state_action.value;
+    const birthCity = view.state.values.birth_city.birth_city_action.value;
     const mergedData = {
       ...existingData,
       id: entryId,
       user_id: userId,
       nationality: nationality,
       birthCountry: birthCountry,
-      birthDepartment: birthDepartment,
-      birthCommune: birthCommune,
+      birthState: birthState,
+      birthCity: birthCity,
     };
     const storeResponse = await client.apps.datastore.put({
       datastore: DemoDataStore.name,

@@ -3,9 +3,9 @@ export function buildAddressPageView() {
     "type": "modal",
     "callback_id": "address-page",
     "notify_on_close": true,
-    "title": { "type": "plain_text", "text": "Adresse" },
-    "submit": { "type": "plain_text", "text": "Soumettre" },
-    "close": { "type": "plain_text", "text": "Fermer" },
+    "title": { "type": "plain_text", "text": "Address" },
+    "submit": { "type": "plain_text", "text": "Submit" },
+    "close": { "type": "plain_text", "text": "Close" },
     "blocks": [
       {
         "type": "input",
@@ -13,9 +13,9 @@ export function buildAddressPageView() {
         "element": {
           "type": "plain_text_input",
           "action_id": "street_address_input",
-          "placeholder": { "type": "plain_text", "text": "Entrez l'adresse" },
+          "placeholder": { "type": "plain_text", "text": "Enter the address" },
         },
-        "label": { "type": "plain_text", "text": "Adresse complète" },
+        "label": { "type": "plain_text", "text": "Full Address" },
       },
       {
         "type": "input",
@@ -23,9 +23,9 @@ export function buildAddressPageView() {
         "element": {
           "type": "plain_text_input",
           "action_id": "postal_code_input",
-          "placeholder": { "type": "plain_text", "text": "Code postal" },
+          "placeholder": { "type": "plain_text", "text": "Postal Code" },
         },
-        "label": { "type": "plain_text", "text": "Code postal" },
+        "label": { "type": "plain_text", "text": "Postal Code" },
       },
       {
         "type": "input",
@@ -33,9 +33,9 @@ export function buildAddressPageView() {
         "element": {
           "type": "plain_text_input",
           "action_id": "city_input",
-          "placeholder": { "type": "plain_text", "text": "Ville" },
+          "placeholder": { "type": "plain_text", "text": "City" },
         },
-        "label": { "type": "plain_text", "text": "Ville" },
+        "label": { "type": "plain_text", "text": "City" },
       },
       {
         "type": "input",
@@ -43,9 +43,9 @@ export function buildAddressPageView() {
         "element": {
           "type": "plain_text_input",
           "action_id": "country_input",
-          "placeholder": { "type": "plain_text", "text": "Pays" },
+          "placeholder": { "type": "plain_text", "text": "Country" },
         },
-        "label": { "type": "plain_text", "text": "Pays" },
+        "label": { "type": "plain_text", "text": "Country" },
       },
     ],
   };

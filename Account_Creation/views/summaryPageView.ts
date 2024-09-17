@@ -1,32 +1,32 @@
-export function buildSummaryPageView({ civility, birthName, usageName, firstName, birthDate, email, mobilePhone, nationality, birthCountry, birthDepartment, birthCommune }) {
+export function buildSummaryPageView({ civility, birthName, usageName, firstName, birthDate, email, mobilePhone, nationality, birthCountry, birthState, birthCity }) {
   const blocks = [
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Civilité:* ${civility}` } },
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Nom de naissance:* ${birthName}` } },
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Prénom:* ${firstName}` } },
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Date de naissance:* ${birthDate}` } },
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Adresse email:* ${email}` } },
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Téléphone portable:* ${mobilePhone}` } },
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Nationalité:* ${nationality}` } },
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Pays de naissance:* ${birthCountry}` } },
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Département de naissance:* ${birthDepartment}` } },
-    { "type": "section", "text": { "type": "mrkdwn", "text": `*Commune de naissance:* ${birthCommune}` } }
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*Title:* ${civility}` } },
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*Birth Name:* ${birthName}` } },
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*First Name:* ${firstName}` } },
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*Date of Birth:* ${birthDate}` } },
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*Email Address:* ${email}` } },
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*Mobile Phone:* ${mobilePhone}` } },
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*Nationality:* ${nationality}` } },
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*Country of Birth:* ${birthCountry}` } },
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*State of Birth:* ${birthState}` } },
+    { "type": "section", "text": { "type": "mrkdwn", "text": `*City of Birth:* ${birthCity}` } }
   ];
 
   if (usageName) {
-    blocks.splice(2, 0, { "type": "section", "text": { "type": "mrkdwn", "text": `*Nom d'usage*: ${usageName}` } });
+    blocks.splice(2, 0, { "type": "section", "text": { "type": "mrkdwn", "text": `*Preferred Name*: ${usageName}` } });
   }
 
   blocks.push({
     "type": "actions",
     "block_id": "action_buttons",
-    "elements": [{ "type": "button", "text": { "type": "plain_text", "text": "Modifier" }, "action_id": "modify_action" }]
+    "elements": [{ "type": "button", "text": { "type": "plain_text", "text": "Modify" }, "action_id": "modify_action" }]
   });
 
   return {
     "type": "modal",
     "callback_id": "completion",
-    "title": { "type": "plain_text", "text": "Résumé des Informations" },
-    "submit": { "type": "plain_text", "text": "Continuer" },
+    "title": { "type": "plain_text", "text": "Information Summary" },
+    "submit": { "type": "plain_text", "text": "Continue" },
     "blocks": blocks
   };
 }

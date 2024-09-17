@@ -3,7 +3,7 @@ import { def as Demo } from "../functions/demo.ts";
 
 const workflow = DefineWorkflow({
   callback_id: "demo-workflow",
-  title: "Ouverture de Compte",
+  title: "Account Opening Journey",
   input_parameters: {
     properties: {
       interactivity: { type: Schema.slack.types.interactivity },
