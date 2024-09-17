@@ -4,21 +4,17 @@ import { Manifest } from "deno-slack-sdk/mod.ts";
 import AccountCreation from "./Account_Creation/workflows/demo.ts";
 import DemoDataStore from "./Account_Creation/datastores/demo.ts";
 
-// History_Cleaner /*
-import HistoryCleaner from "./Account_Creation/workflows/cleaner.ts";
-
 /**
  * The app manifest contains the app's configuration. This
  * file defines attributes like app name and description.
  * https://api.slack.com/automation/manifest
  */
 export default Manifest({
-  name: "Ouverture de Compte",
-  description: "Processus d'ouverture de compte par un conseiller",
+  name: "Account Opening",
+  description: "Account opening process by an advisor",
   icon: "assets/customer-account-opening.png",
   workflows: [
     AccountCreation,
-    HistoryCleaner,
   ],
   outgoingDomains: [
     "httpbin.org", "maps.googleapis.com", // for External_API_Calls/functions/*
