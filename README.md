@@ -32,10 +32,10 @@ Start by cloning this repository:
 
 ```zsh
 # Clone this project onto your machine
-$ slack create my-slack-bank-account-creation-app -t slack-samples/slack-bank-account-creation
+$ slack create my-slack-bank-account-opening-app -t slack-samples/slack-bank-account-opening
 
 # Change into this project directory
-$ cd my-slack-bank-account-creation-app
+$ cd my-slack-bank-account-opening-app
 
 ## Resources
 
